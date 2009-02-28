@@ -22,7 +22,7 @@ class TextParser(HTMLParser):
 	
 	def handle_data(self, data):
 		if self.appendDataFlag:
-			self.data.append(data)
+			self.data.append(' ' + data)
 
 	def getData(self):
 		return ''.join(self.data)

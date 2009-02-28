@@ -13,7 +13,7 @@ class WordTokenizer(Tokenizer):
 		Tokenizer.__init__(self)
 
 	def tokenize(self, data):
-		return re.split(r'[ ,.;:"\'-\[\]]+', data)
+		return re.split(r'[ ,\t\.;:"\'-]+', data)
 
 if __name__ == '__main__':
 	# USAGE
