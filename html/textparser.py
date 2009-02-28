@@ -1,6 +1,6 @@
 from HTMLParser import HTMLParser
 
-class textparser(HTMLParser):
+class TextParser(HTMLParser):
 
 	def __init__(self):
 		HTMLParser.__init__(self)
