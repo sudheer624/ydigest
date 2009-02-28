@@ -1,5 +1,11 @@
+import re
+
+from tokenizer import Tokenizer
+
 """
 Class to tokenize sentences into words
+TODO: base this class on the lines of StreamTokenizer.java
+[http://suif.stanford.edu/~mhn/deadlock/elevator/java/io/StreamTokenizer.java.html]
 """
 class WordTokenizer(Tokenizer):
 
@@ -7,4 +13,9 @@ class WordTokenizer(Tokenizer):
 		Tokenizer.__init__(self)
 
 	def tokenize(self, data):
-		raise Exception('')
+		return re.split(r'[ ,.;:"\'-\[\]]+', data)
+
+if __name__ == '__main__':
+	# USAGE
+	t = WordTokenizer()
+	print t.tokenize('this is a test, and only a test [yeah right]')
